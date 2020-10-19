@@ -50,7 +50,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               opacity: _visible ? 1.0 : 0.0,
               duration: Duration(seconds: 5),
               child: CircleNextButton(
-                onPress: () {},
+                onPress: () {
+                  Navigator.pushNamed(context, '/second');
+                },
               ),
             ),
           )
