@@ -48,7 +48,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             left: 190,
             child: AnimatedOpacity(
               opacity: _visible ? 1.0 : 0.0,
-              duration: Duration(seconds: 5),
+              duration: Duration(seconds: 3),
               child: CircleNextButton(
                 onPress: () {
                   Navigator.pushNamed(context, '/second');
