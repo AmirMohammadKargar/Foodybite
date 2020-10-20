@@ -86,6 +86,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   BigBlueButton(
                     title: 'Login',
+                    onPress: () {
+                      Navigator.pushNamed(context, '/introScreen');
+                    },
                   ),
                   SizedBox(
                     height: 20,
