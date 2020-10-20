@@ -5,8 +5,10 @@ class TextSimpleButton extends StatelessWidget {
     Key key,
     this.title,
     this.onPress,
+    this.colors,
   }) : super(key: key);
   final String title;
+  final Color colors;
   final Function onPress;
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class TextSimpleButton extends StatelessWidget {
         '$title',
         style: TextStyle(
           fontSize: 15.0,
-          color: Colors.white,
+          color: colors,
         ),
       ),
     );
