@@ -75,6 +75,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.only(left: 220),
                     child: TextSimpleButton(
                       title: 'Forget password?',
+                      onPress: () {
+                        Navigator.pushNamed(context, '/forgetScreen');
+                      },
                     ),
                   ),
                   SizedBox(
