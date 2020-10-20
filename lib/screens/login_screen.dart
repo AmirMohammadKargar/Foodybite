@@ -20,32 +20,37 @@ class _LoginScreenState extends State<LoginScreen> {
       });
     });
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomPadding: false,
       body: AnimatedOpacity(
         opacity: _visible ? 1.0 : 0.0,
         duration: Duration(seconds: 3),
-        child: Stack(
-          children: [
-            Container(
-              height: MediaQuery.of(context).size.height,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/Login.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/Login.png'),
+              fit: BoxFit.cover,
             ),
-            Positioned(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.black54,
-                ),
-              ),
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.black54,
             ),
-            Positioned(
-              top: 350,
-              left: 50,
+            child: SingleChildScrollView(
+              reverse: true,
               child: Column(
-                children: <Widget>[
+                children: [
+                  Text(
+                    'Foodybite',
+                    style: TextStyle(
+                      fontSize: 55.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(height: 200),
                   TextInputOpacity(
                     icon: Icon(
                       Icons.mail,
@@ -54,51 +59,47 @@ class _LoginScreenState extends State<LoginScreen> {
                     title: 'Email',
                   ),
                   SizedBox(
-                    height: 35,
+                    height: 50,
                   ),
                   TextInputOpacity(
                     icon: Icon(
                       Icons.lock,
                       color: Colors.white,
                     ),
-                    title: 'Email',
+                    title: 'Password',
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 220),
+                    child: TextSimpleButton(
+                      title: 'Forget password?',
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  BigBlueButton(
+                    title: 'Login',
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                        bottom: MediaQuery.of(context).viewInsets.bottom),
+                    child: TextSimpleButton(
+                      title: 'Create New Account',
+                    ),
+                  ),
+                  SizedBox(
+                    height: 100,
                   ),
                 ],
               ),
             ),
-            Positioned(
-              top: 50,
-              left: 100,
-              child: Text(
-                'Foodybite',
-                style: TextStyle(
-                  fontSize: 55.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            Positioned(
-                top: 530,
-                left: 270,
-                child: TextSimpleButton(
-                  title: 'Forget password?',
-                )),
-            Positioned(
-              top: 600,
-              left: 50,
-              child: BigBlueButton(
-                title: 'Login',
-              ),
-            ),
-            Positioned(
-              top: 700,
-              left: 160,
-              child: TextSimpleButton(
-                title: 'Create New Account',
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
