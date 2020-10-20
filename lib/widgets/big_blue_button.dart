@@ -19,7 +19,7 @@ class BigBlueButton extends StatelessWidget {
         height: 50,
         decoration: BoxDecoration(
           color: Colors.blue[700],
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
               color: Colors.white,
@@ -35,7 +35,7 @@ class BigBlueButton extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 20.0,
+              fontSize: 17.0,
               fontWeight: FontWeight.bold,
             ),
           ),
