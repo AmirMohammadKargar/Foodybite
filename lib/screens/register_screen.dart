@@ -37,7 +37,7 @@ class RegisterScreen extends StatelessWidget {
                 Stack(
                   children: [
                     CircleAvatar(
-                      radius: 65.0,
+                      radius: 80.0,
                       backgroundColor: Colors.white12,
                       child: Icon(
                         Icons.supervised_user_circle_outlined,
@@ -46,8 +46,8 @@ class RegisterScreen extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      top: 95,
-                      left: 83,
+                      top: 120,
+                      left: 110,
                       child: CircleIconButton(
                         icon: Icon(
                           Icons.arrow_upward_rounded,
