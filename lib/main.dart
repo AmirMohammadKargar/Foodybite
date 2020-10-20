@@ -1,5 +1,6 @@
 import 'package:Foodybite/screens/forget_password_screen.dart';
 import 'package:Foodybite/screens/login_screen.dart';
+import 'package:Foodybite/screens/register_screen.dart';
 import 'package:Foodybite/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => WelcomeScreen(),
         '/second': (context) => LoginScreen(),
         '/forgetScreen': (context) => ForgetScreen(),
+        '/registerScreen': (context) => RegisterScreen(),
       },
     );
   }
