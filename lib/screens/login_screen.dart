@@ -75,6 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.only(left: 220),
                     child: TextSimpleButton(
                       title: 'Forget password?',
+                      colors: Colors.white,
                       onPress: () {
                         Navigator.pushNamed(context, '/forgetScreen');
                       },
@@ -94,6 +95,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         bottom: MediaQuery.of(context).viewInsets.bottom),
                     child: TextSimpleButton(
                       title: 'Create New Account',
+                      colors: Colors.white,
+                      onPress: () {
+                        Navigator.pushNamed(context, '/registerScreen');
+                      },
                     ),
                   ),
                   SizedBox(
