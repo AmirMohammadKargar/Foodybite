@@ -41,7 +41,9 @@ class IntroScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             RaisedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/homeScreen');
+                              },
                               child: Text(
                                 'Skip',
                                 style: TextStyle(
@@ -87,7 +89,12 @@ class IntroScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 100),
                   Center(
-                    child: BigBlueButton(title: 'Turn On GPS'),
+                    child: BigBlueButton(
+                      title: 'Turn On GPS',
+                      onPress: () {
+                        Navigator.pushNamed(context, '/homeScreen');
+                      },
+                    ),
                   ),
                 ],
               ),
