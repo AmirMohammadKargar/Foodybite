@@ -1,6 +1,9 @@
+import 'package:Foodybite/widgets/bottom_navigation.dart';
+import 'package:Foodybite/widgets/category_crasouel.dart';
+import 'package:Foodybite/widgets/friends_crasouel.dart';
 import 'package:Foodybite/widgets/row_title_carsoul.dart';
 import 'package:Foodybite/widgets/search.dart';
-import 'package:Foodybite/widgets/trend_resturants_card.dart';
+import 'package:Foodybite/widgets/trending_resturant_crasouel.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,7 +17,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.blue,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      bottomNavigationBar: BottomNavigation(),
+      backgroundColor: Colors.grey[100],
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,31 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(height: 20),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.31,
-              width: MediaQuery.of(context).size.width,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                itemBuilder: (BuildContext context, int index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 15.0,
-                      vertical: 5.0,
-                    ),
-                    child: TrendResturantsCard(
-                      rate: '🌟 4.5',
-                      title: 'Happy Bones',
-                      isOpen: 'OPEN',
-                      category: 'Italian',
-                      image: 'assets/images/Resturant1.png',
-                      address: '394 Broome St, New York, NY 10013, USA',
-                      distance: '12 km',
-                    ),
-                  );
-                },
-              ),
-            ),
+            TrendingResturantCarousel(),
             SizedBox(height: 25.0),
             Padding(
               padding: const EdgeInsets.symmetric(
@@ -77,6 +63,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPress: () {},
               ),
             ),
+            CategoryCarousel(),
+            SizedBox(height: 0.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
+              ),
+              child: RowTitleCraousel(
+                title: 'Friends',
+                count: 9,
+                onPress: () {},
+              ),
+            ),
+            FriendsCaresoul(),
           ],
         ),
       ),
