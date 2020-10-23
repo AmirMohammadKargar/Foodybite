@@ -1,4 +1,3 @@
-import 'package:Foodybite/widgets/text_button.dart';
 import 'package:flutter/material.dart';
 
 class RowTitleCraousel extends StatelessWidget {
@@ -22,10 +21,12 @@ class RowTitleCraousel extends StatelessWidget {
             fontSize: 20.0,
           ),
         ),
-        TextSimpleButton(
-          title: 'See all($count)',
-          colors: Colors.blue,
-          onPress: onPress(),
+        GestureDetector(
+          onTap: onPress,
+          child: Text(
+            'See all($count)',
+            style: TextStyle(color: Colors.blue),
+          ),
         ),
       ],
     );
