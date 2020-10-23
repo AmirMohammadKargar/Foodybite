@@ -3,6 +3,7 @@ import 'package:Foodybite/screens/home_screen.dart';
 import 'package:Foodybite/screens/intro_screen.dart';
 import 'package:Foodybite/screens/login_screen.dart';
 import 'package:Foodybite/screens/register_screen.dart';
+import 'package:Foodybite/screens/trend_resturant.dart';
 import 'package:Foodybite/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/registerScreen': (context) => RegisterScreen(),
         '/introScreen': (context) => IntroScreen(),
         '/homeScreen': (context) => HomeScreen(),
+        '/trendResturantScreen': (context) => TrendResturantScreen(),
       },
     );
   }
