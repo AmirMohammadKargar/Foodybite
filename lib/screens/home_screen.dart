@@ -47,7 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
               child: RowTitleCraousel(
                 title: 'Trending Restaurants',
                 count: 15,
-                onPress: () {},
+                onPress: () {
+                  Navigator.pushNamed(context, '/trendResturantScreen');
+                },
               ),
             ),
             SizedBox(height: 20),
