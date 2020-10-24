@@ -5,14 +5,15 @@ class SmallTextBox extends StatelessWidget {
     Key key,
     this.title,
     this.color,
+    this.color2,
   }) : super(key: key);
   final String title;
-  final Color color;
+  final Color color, color2;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: color2,
         borderRadius: BorderRadius.circular(3.0),
       ),
       width: 50,
