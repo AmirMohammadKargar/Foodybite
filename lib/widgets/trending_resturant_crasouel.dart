@@ -21,14 +21,16 @@ class TrendingResturantCarousel extends StatelessWidget {
               vertical: 5.0,
             ),
             child: TrendResturantsCard(
-              rate: '🌟 4.5',
-              title: 'Happy Bones',
-              isOpen: 'OPEN',
-              category: 'Italian',
-              image: 'assets/images/Resturant1.png',
-              address: '394 Broome St, New York, NY 10013, USA',
-              distance: '12 km',
-            ),
+                rate: '🌟 4.5',
+                title: 'Happy Bones',
+                isOpen: 'OPEN',
+                category: 'Italian',
+                image: 'assets/images/Resturant1.png',
+                address: '394 Broome St, New York, NY 10013, USA',
+                distance: '12 km',
+                onPress: () {
+                  Navigator.pushNamed(context, '/resturantDetailScreen');
+                }),
           );
         },
       ),

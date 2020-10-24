@@ -12,8 +12,10 @@ class TrendResturantsCard extends StatelessWidget {
     this.category,
     this.distance,
     this.address,
+    this.onPress,
   }) : super(key: key);
   final String image, title, isOpen, rate, category, distance, address;
+  final Function onPress;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,79 +36,82 @@ class TrendResturantsCard extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: Stack(
-        children: <Widget>[
-          Positioned(
-            top: 165,
-            child: Container(
-              width: MediaQuery.of(context).size.width * 0.8,
-              height: MediaQuery.of(context).size.height * 0.1,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(15.0),
-                  bottomLeft: Radius.circular(15.0),
+      child: GestureDetector(
+        onTap: onPress,
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              top: 165,
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.8,
+                height: MediaQuery.of(context).size.height * 0.1,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(15.0),
+                    bottomLeft: Radius.circular(15.0),
+                  ),
                 ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 15.0,
-                  vertical: 15.0,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Text(
-                          '$title',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blueGrey[900],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 15.0,
+                    vertical: 15.0,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Text(
+                            '$title',
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blueGrey[900],
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 15.0),
-                        SmallTag(
-                          title: '$category',
-                          color: Colors.pink[200],
-                        ),
-                        SizedBox(width: 10.0),
-                        SmallTag(
-                          title: '$distance',
-                          color: Colors.purpleAccent,
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 5.0),
-                    Text(
-                      '$address',
-                      style: TextStyle(
-                        color: Colors.grey[500],
+                          SizedBox(width: 15.0),
+                          SmallTag(
+                            title: '$category',
+                            color: Colors.pink[200],
+                          ),
+                          SizedBox(width: 10.0),
+                          SmallTag(
+                            title: '$distance',
+                            color: Colors.purpleAccent,
+                          ),
+                        ],
                       ),
-                    )
-                  ],
+                      SizedBox(height: 5.0),
+                      Text(
+                        '$address',
+                        style: TextStyle(
+                          color: Colors.grey[500],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            top: 15,
-            left: 20,
-            child: SmallTextBox(
-              title: '$isOpen',
-              color: Colors.greenAccent[700],
+            Positioned(
+              top: 15,
+              left: 20,
+              child: SmallTextBox(
+                title: '$isOpen',
+                color: Colors.greenAccent[700],
+              ),
             ),
-          ),
-          Positioned(
-            top: 15,
-            right: 20,
-            child: SmallTextBox(
-              title: '$rate',
-              color: Colors.grey[700],
+            Positioned(
+              top: 15,
+              right: 20,
+              child: SmallTextBox(
+                title: '$rate',
+                color: Colors.grey[700],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
