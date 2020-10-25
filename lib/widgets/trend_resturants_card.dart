@@ -13,8 +13,10 @@ class TrendResturantsCard extends StatelessWidget {
     this.distance,
     this.address,
     this.onPress,
+    this.size,
   }) : super(key: key);
   final String image, title, isOpen, rate, category, distance, address;
+  final double size;
   final Function onPress;
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class TrendResturantsCard extends StatelessWidget {
             Positioned(
               top: 165,
               child: Container(
-                width: MediaQuery.of(context).size.width * 0.8,
+                width: size,
                 height: MediaQuery.of(context).size.height * 0.1,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -98,6 +100,7 @@ class TrendResturantsCard extends StatelessWidget {
               top: 15,
               left: 20,
               child: SmallTextBox(
+                color2: Colors.white,
                 title: '$isOpen',
                 color: Colors.greenAccent[700],
               ),
@@ -106,6 +109,7 @@ class TrendResturantsCard extends StatelessWidget {
               top: 15,
               right: 20,
               child: SmallTextBox(
+                color2: Colors.white,
                 title: '$rate',
                 color: Colors.grey[700],
               ),
