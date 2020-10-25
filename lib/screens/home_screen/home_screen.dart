@@ -1,9 +1,9 @@
 import 'package:Foodybite/widgets/bottom_navigation.dart';
 import 'package:Foodybite/screens/home_screen/widgets/category_crasouel.dart';
-import 'package:Foodybite/widgets/friends_crasouel.dart';
+import 'package:Foodybite/screens/home_screen/widgets/friends_crasouel.dart';
 import 'package:Foodybite/widgets/row_title_carsoul.dart';
 import 'package:Foodybite/widgets/search.dart';
-import 'package:Foodybite/widgets/trending_resturant_crasouel.dart';
+import 'package:Foodybite/screens/home_screen/widgets/trending_resturant_crasouel.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
