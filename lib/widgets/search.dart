@@ -20,7 +20,7 @@ class Search extends StatelessWidget {
             blurRadius: 3.0,
           ),
         ],
-        borderRadius: BorderRadius.circular(35.0),
+        borderRadius: BorderRadius.circular(10.0),
       ),
       child: TextField(
         decoration: InputDecoration(
