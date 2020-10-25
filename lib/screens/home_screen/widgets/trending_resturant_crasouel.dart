@@ -28,6 +28,7 @@ class TrendingResturantCarousel extends StatelessWidget {
                 image: 'assets/images/Resturant1.png',
                 address: '394 Broome St, New York, NY 10013, USA',
                 distance: '12 km',
+                size: MediaQuery.of(context).size.width * 0.8,
                 onPress: () {
                   Navigator.pushNamed(context, '/resturantDetailScreen');
                 }),

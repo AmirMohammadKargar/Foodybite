@@ -41,7 +41,7 @@ class TrendResturantScreen extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 45.0,
+                  horizontal: 20.0,
                   vertical: 10.0,
                 ),
                 child: ListView.builder(
@@ -59,6 +59,7 @@ class TrendResturantScreen extends StatelessWidget {
                         image: 'assets/images/Resturant1.png',
                         address: '394 Broome St, New York, NY 10013, USA',
                         distance: '12 km',
+                        size: MediaQuery.of(context).size.width * 0.91,
                       ),
                     );
                   },
