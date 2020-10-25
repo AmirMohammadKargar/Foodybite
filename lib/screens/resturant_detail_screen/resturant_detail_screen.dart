@@ -18,6 +18,9 @@ class ResturantDetailScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: StickyButton(
         title: 'Rate Your Experience',
+        onPress: () {
+          Navigator.pushNamed(context, '/reviewScreen');
+        },
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -144,7 +147,20 @@ class ResturantDetailScreen extends StatelessWidget {
                 horizontal: 20.0,
               ),
               child: Column(
-                children: [ReviewList()],
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: ReviewList(),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: ReviewList(),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: ReviewList(),
+                  ),
+                ],
               ),
             )
           ],
