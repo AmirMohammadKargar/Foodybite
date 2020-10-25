@@ -5,6 +5,7 @@ import 'package:Foodybite/screens/login_screen/login_screen.dart';
 import 'package:Foodybite/screens/register_screen/register_screen.dart';
 import 'package:Foodybite/screens/resturant_detail_screen/resturant_detail_screen.dart';
 import 'package:Foodybite/screens/review_and_rating_screen/review_and_rating_screen.dart';
+import 'package:Foodybite/screens/review_list_screen/review_list_screen.dart';
 import 'package:Foodybite/screens/trend_resturant_screen/trend_resturant_screen.dart';
 import 'package:Foodybite/screens/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         '/trendResturantScreen': (context) => TrendResturantScreen(),
         '/resturantDetailScreen': (context) => ResturantDetailScreen(),
         '/reviewScreen': (context) => ReviewScreen(),
+        '/reviewListScreen': (context) => ReviewListScreen(),
       },
     );
   }
