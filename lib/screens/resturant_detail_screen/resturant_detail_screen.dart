@@ -140,7 +140,13 @@ class ResturantDetailScreen extends StatelessWidget {
             Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-              child: RowTitleCraousel(title: 'Review & Ratings', count: 32),
+              child: RowTitleCraousel(
+                title: 'Review & Ratings',
+                count: 32,
+                onPress: () {
+                  Navigator.pushNamed(context, '/reviewListScreen');
+                },
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
