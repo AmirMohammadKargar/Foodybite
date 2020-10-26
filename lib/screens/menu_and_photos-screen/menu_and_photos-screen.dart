@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:full_screen_image/full_screen_image.dart';
 
 class MenuAndPhotoScreen extends StatelessWidget {
   const MenuAndPhotoScreen({Key key}) : super(key: key);
@@ -31,16 +32,21 @@ class MenuAndPhotoScreen extends StatelessWidget {
       body: StaggeredGridView.countBuilder(
         crossAxisCount: 4,
         itemCount: 12,
-        itemBuilder: (BuildContext context, int index) => Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/italian.png'),
-              fit: BoxFit.cover,
+        itemBuilder: (BuildContext context, int index) => FullScreenWidget(
+          child: Center(
+            child: Hero(
+              tag: "smallImage" + index.toString(),
+              child: ClipRRect(
+                child: Image.asset(
+                  "assets/images/italian.png",
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
         ),
         staggeredTileBuilder: (int index) =>
-            StaggeredTile.count(2, index.isEven ? 2 : 1),
+            StaggeredTile.count(2, index.isEven ? 2 : 2),
         mainAxisSpacing: 4.0,
         crossAxisSpacing: 4.0,
       ),
