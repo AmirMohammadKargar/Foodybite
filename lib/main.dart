@@ -2,6 +2,7 @@ import 'package:Foodybite/screens/forget_password_screen/forget_password_screen.
 import 'package:Foodybite/screens/home_screen/home_screen.dart';
 import 'package:Foodybite/screens/intro_screen/intro_screen.dart';
 import 'package:Foodybite/screens/login_screen/login_screen.dart';
+import 'package:Foodybite/screens/menu_and_photos-screen/menu_and_photos-screen.dart';
 import 'package:Foodybite/screens/register_screen/register_screen.dart';
 import 'package:Foodybite/screens/resturant_detail_screen/resturant_detail_screen.dart';
 import 'package:Foodybite/screens/review_and_rating_screen/review_and_rating_screen.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/resturantDetailScreen': (context) => ResturantDetailScreen(),
         '/reviewScreen': (context) => ReviewScreen(),
         '/reviewListScreen': (context) => ReviewListScreen(),
+        '/menuAndPhotoScreen': (context) => MenuAndPhotoScreen(),
       },
     );
   }
