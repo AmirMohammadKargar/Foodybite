@@ -1,3 +1,4 @@
+import 'package:Foodybite/screens/find_friends_screen/find_friends_screen.dart';
 import 'package:Foodybite/screens/forget_password_screen/forget_password_screen.dart';
 import 'package:Foodybite/screens/home_screen/home_screen.dart';
 import 'package:Foodybite/screens/intro_screen/intro_screen.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         '/reviewScreen': (context) => ReviewScreen(),
         '/reviewListScreen': (context) => ReviewListScreen(),
         '/menuAndPhotoScreen': (context) => MenuAndPhotoScreen(),
+        '/findFriendScreen': (context) => FindFriendScreen(),
       },
     );
   }
