@@ -22,17 +22,34 @@ class Search extends StatelessWidget {
         ],
         borderRadius: BorderRadius.circular(10.0),
       ),
-      child: TextField(
-        decoration: InputDecoration(
-          enabledBorder: const OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.transparent, width: 0.0),
+      child: Row(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width * 0.78,
+            child: TextField(
+              decoration: InputDecoration(
+                enabledBorder: const OutlineInputBorder(
+                  borderSide:
+                      const BorderSide(color: Colors.transparent, width: 0.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                ),
+                prefixIcon: icon,
+                hintText: '$title',
+              ),
+            ),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey, width: 1.0),
-          ),
-          prefixIcon: icon,
-          hintText: '$title',
-        ),
+          IconButton(
+            icon: Icon(
+              Icons.filter_list,
+              color: Colors.grey,
+            ),
+            onPressed: () {
+              Navigator.pushNamed(context, '/filterScreen');
+            },
+          )
+        ],
       ),
     );
   }
