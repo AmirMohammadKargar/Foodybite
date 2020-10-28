@@ -1,4 +1,4 @@
-import 'package:Foodybite/screens/review_and_rating_screen/widgets/rating_star.dart';
+import 'package:Foodybite/widgets/rating_star.dart';
 import 'package:Foodybite/widgets/big_text_inpurt.dart';
 import 'package:Foodybite/widgets/sticky_button.dart';
 import 'package:flutter/material.dart';
