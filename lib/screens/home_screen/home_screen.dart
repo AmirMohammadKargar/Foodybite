@@ -63,7 +63,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RowTitleCraousel(
                   title: 'Category',
                   count: 9,
-                  onPress: () {},
+                  onPress: () {
+                    Navigator.pushNamed(context, '/categoryScreen');
+                  },
                 ),
               ),
               CategoryCarousel(),
