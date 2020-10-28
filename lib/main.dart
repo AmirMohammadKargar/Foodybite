@@ -1,3 +1,4 @@
+import 'package:Foodybite/screens/category_screen/category_screen.dart';
 import 'package:Foodybite/screens/filter_screen/filter_screen.dart';
 import 'package:Foodybite/screens/find_friends_screen/find_friends_screen.dart';
 import 'package:Foodybite/screens/forget_password_screen/forget_password_screen.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         '/menuAndPhotoScreen': (context) => MenuAndPhotoScreen(),
         '/findFriendScreen': (context) => FindFriendScreen(),
         '/filterScreen': (context) => FilterScreen(),
+        '/categoryScreen': (context) => CategoryScreen(),
       },
     );
   }
