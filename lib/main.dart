@@ -8,6 +8,7 @@ import 'package:Foodybite/screens/login_screen/login_screen.dart';
 import 'package:Foodybite/screens/menu_and_photos-screen/menu_and_photos-screen.dart';
 import 'package:Foodybite/screens/register_screen/register_screen.dart';
 import 'package:Foodybite/screens/resturant_detail_screen/resturant_detail_screen.dart';
+import 'package:Foodybite/screens/resturants_list_screen/resturants_list_screen.dart';
 import 'package:Foodybite/screens/review_and_rating_screen/review_and_rating_screen.dart';
 import 'package:Foodybite/screens/review_list_screen/review_list_screen.dart';
 import 'package:Foodybite/screens/trend_resturant_screen/trend_resturant_screen.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/findFriendScreen': (context) => FindFriendScreen(),
         '/filterScreen': (context) => FilterScreen(),
         '/categoryScreen': (context) => CategoryScreen(),
+        '/resturantListScreen': (context) => ResturantListScreen(),
       },
     );
   }
