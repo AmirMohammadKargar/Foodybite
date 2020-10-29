@@ -45,6 +45,9 @@ class CategoryScreen extends StatelessWidget {
               color1: Colors.pink,
               color2: Colors.yellow,
               image: 'assets/images/italian.png',
+              onPress: () {
+                Navigator.pushNamed(context, '/resturantListScreen');
+              },
             );
           }),
     );
