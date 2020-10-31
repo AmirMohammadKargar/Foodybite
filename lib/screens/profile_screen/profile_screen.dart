@@ -1,3 +1,4 @@
+import 'package:Foodybite/models/users.dart';
 import 'package:Foodybite/screens/profile_screen/widgets/column_text.dart';
 import 'package:Foodybite/widgets/simple_button.dart';
 import 'package:Foodybite/widgets/trend_resturants_card.dart';
@@ -8,6 +9,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Map arguments = ModalRoute.of(context).settings.arguments as Map;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -36,14 +38,14 @@ class ProfileScreen extends StatelessWidget {
           Center(
             child: CircleAvatar(
               radius: 60.0,
-              backgroundImage: AssetImage('assets/images/profile4.png'),
+              backgroundImage: AssetImage(arguments['imageUrl']),
             ),
           ),
           SizedBox(
             height: 20.0,
           ),
           Text(
-            'Jayson Acevedo',
+            arguments['name'],
             style: TextStyle(
               fontSize: 23.0,
             ),
@@ -52,7 +54,7 @@ class ProfileScreen extends StatelessWidget {
             height: 5.0,
           ),
           Text(
-            'jayson.acevedo@gmail.com',
+            arguments['email'],
             style: TextStyle(
               fontSize: 15.0,
               color: Colors.grey,
@@ -82,9 +84,7 @@ class ProfileScreen extends StatelessWidget {
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 35.0),
                   child: ColumnText(
-                    title: 'Followers',
-                    count: '50K',
-                  )),
+                      title: 'Followers', count: arguments['follower'])),
               Text(
                 "|",
                 style: TextStyle(
@@ -97,7 +97,7 @@ class ProfileScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 35.0),
                   child: ColumnText(
                     title: 'Following',
-                    count: '45',
+                    count: arguments['following'],
                   )),
             ],
           ),
