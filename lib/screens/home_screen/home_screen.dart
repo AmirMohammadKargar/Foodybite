@@ -82,11 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
-              FriendsCaresoul(
-                onPress: () {
-                  Navigator.pushNamed(context, '/profileScreen');
-                },
-              ),
+              FriendsCaresoul(),
             ],
           ),
         ),

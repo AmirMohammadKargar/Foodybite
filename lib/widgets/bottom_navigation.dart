@@ -1,16 +1,33 @@
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
-class BottomNavigation extends StatelessWidget {
+class BottomNavigation extends StatefulWidget {
   const BottomNavigation({
     Key key,
   }) : super(key: key);
 
   @override
+  _BottomNavigationState createState() => _BottomNavigationState();
+}
+
+class _BottomNavigationState extends State<BottomNavigation> {
+  int _currentIndex = 0;
+
+  void changeIndex(int index) {
+    setState(() {
+      _currentIndex = index;
+      if (index == 1) {
+        Navigator.pushNamed(context, '/savedScreen');
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BubbleBottomBar(
       opacity: .2,
-      currentIndex: 0,
+      currentIndex: _currentIndex,
+      onTap: changeIndex,
       borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       elevation: 8,
       fabLocation: BubbleBottomBarFabLocation.end, //new
@@ -31,12 +48,12 @@ class BottomNavigation extends StatelessWidget {
         BubbleBottomBarItem(
             backgroundColor: Colors.deepPurple,
             icon: Icon(
-              Icons.save_alt_outlined,
+              Icons.bookmark_border_outlined,
               color: Colors.blue,
             ),
             activeIcon: Icon(
-              Icons.save_alt_outlined,
-              color: Colors.blue,
+              Icons.bookmark_border_outlined,
+              color: Colors.deepPurple,
             ),
             title: Text("Saved")),
         BubbleBottomBarItem(
@@ -46,8 +63,8 @@ class BottomNavigation extends StatelessWidget {
               color: Colors.blue,
             ),
             activeIcon: Icon(
-              Icons.notifications,
-              color: Colors.blue,
+              Icons.notifications_none_outlined,
+              color: Colors.indigo,
             ),
             title: Text("Notifiaction")),
         BubbleBottomBarItem(
@@ -58,7 +75,7 @@ class BottomNavigation extends StatelessWidget {
             ),
             activeIcon: Icon(
               Icons.supervised_user_circle_outlined,
-              color: Colors.blue,
+              color: Colors.green,
             ),
             title: Text("User"))
       ],
