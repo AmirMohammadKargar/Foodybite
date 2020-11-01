@@ -35,35 +35,30 @@ class CategoryList extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              child: Opacity(
-                opacity: 0.8,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    gradient: LinearGradient(
-                      colors: [
-                        color1,
-                        color2,
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
+                  gradient: LinearGradient(
+                    colors: [
+                      color1.withOpacity(0.7),
+                      color2.withOpacity(0.7),
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    '$title',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
               ),
             ),
-            Positioned(
-              left: 165.0,
-              top: 30.0,
-              child: Text(
-                '$title',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            )
           ],
         ),
       ),

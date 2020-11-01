@@ -1,3 +1,4 @@
+import 'package:Foodybite/models/category.dart';
 import 'package:Foodybite/widgets/food_category.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +14,9 @@ class CategoryCarousel extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 5,
+        itemCount: category.length,
         itemBuilder: (BuildContext context, int index) {
+          Category cate = category[index];
           return Padding(
             padding: const EdgeInsets.only(
               left: 15.0,
@@ -22,10 +24,10 @@ class CategoryCarousel extends StatelessWidget {
               right: 5.0,
             ),
             child: FoodCategory(
-              title: 'Italian',
-              image: 'assets/images/italian.png',
-              color1: Colors.pink,
-              color2: Colors.yellow[300],
+              title: cate.name,
+              image: cate.imageUrl,
+              color1: cate.color1,
+              color2: cate.color2,
             ),
           );
         },

@@ -1,4 +1,6 @@
+import 'package:Foodybite/models/category.dart';
 import 'package:Foodybite/screens/category_screen/widgets/category_list.dart';
+import 'package:Foodybite/screens/resturants_list_screen/resturants_list_screen.dart';
 import 'package:flutter/material.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -38,15 +40,23 @@ class CategoryScreen extends StatelessWidget {
         ],
       ),
       body: ListView.builder(
-          itemCount: 8,
+          itemCount: category.length,
           itemBuilder: (BuildContext context, int index) {
+            Category cate = category[index];
             return CategoryList(
-              title: 'Italina',
-              color1: Colors.pink,
-              color2: Colors.yellow,
-              image: 'assets/images/italian.png',
+              title: cate.name,
+              color1: cate.color1,
+              color2: cate.color2,
+              image: cate.imageUrl,
               onPress: () {
-                Navigator.pushNamed(context, '/resturantListScreen');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => ResturantListScreen(
+                      category: cate,
+                    ),
+                  ),
+                );
               },
             );
           }),
