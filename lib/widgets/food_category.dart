@@ -26,35 +26,31 @@ class FoodCategory extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child: Opacity(
-            opacity: 0.5,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15.0),
-                gradient: LinearGradient(
-                  colors: [
-                    color1,
-                    color2,
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15.0),
+              gradient: LinearGradient(
+                colors: [
+                  color1.withOpacity(0.6),
+                  color2.withOpacity(0.6),
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+            child: Center(
+              child: Text(
+                '$title',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
           ),
         ),
-        Positioned(
-          left: 28.0,
-          top: 48.0,
-          child: Text(
-            '$title',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        )
       ],
     );
   }
