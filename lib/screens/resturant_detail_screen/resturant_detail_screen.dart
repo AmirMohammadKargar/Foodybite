@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:Foodybite/models/resturants.dart';
 import 'package:Foodybite/screens/resturant_detail_screen/widgets/head_image.dart';
 import 'package:Foodybite/screens/resturant_detail_screen/widgets/icon_box.dart';
 import 'package:Foodybite/screens/resturant_detail_screen/widgets/menu_and_photo_crasouel.dart';
@@ -10,9 +11,15 @@ import 'package:Foodybite/widgets/small_text_box.dart';
 import 'package:Foodybite/widgets/sticky_button.dart';
 import 'package:flutter/material.dart';
 
-class ResturantDetailScreen extends StatelessWidget {
-  const ResturantDetailScreen({Key key}) : super(key: key);
+class ResturantDetailScreen extends StatefulWidget {
+  const ResturantDetailScreen({Key key, this.resturants}) : super(key: key);
+  final Resturants resturants;
 
+  @override
+  _ResturantDetailScreenState createState() => _ResturantDetailScreenState();
+}
+
+class _ResturantDetailScreenState extends State<ResturantDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +36,7 @@ class ResturantDetailScreen extends StatelessWidget {
             Stack(
               children: <Widget>[
                 HeadImage(
-                  image: 'assets/images/Resturant1.png',
+                  image: widget.resturants.imageUrl,
                 ),
                 Positioned(
                   left: 15.0,
@@ -73,7 +80,7 @@ class ResturantDetailScreen extends StatelessWidget {
                   top: 310,
                   left: 20,
                   child: IconBox(
-                    phoneNumber: '+1 212-673-3754',
+                    phoneNumber: widget.resturants.phone,
                   ),
                 ),
               ],
@@ -87,7 +94,7 @@ class ResturantDetailScreen extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'Happy Bones',
+                        widget.resturants.name,
                         style: TextStyle(
                           fontSize: 25.0,
                           fontWeight: FontWeight.bold,
@@ -96,18 +103,18 @@ class ResturantDetailScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: SmallTag(
-                          title: 'Italian',
+                          title: widget.resturants.type,
                           color: Colors.pink,
                         ),
                       ),
                       SmallTag(
-                        title: '12 km',
+                        title: widget.resturants.distance + ' km',
                         color: Colors.purpleAccent,
                       ),
                     ],
                   ),
                   SmallTextBox(
-                    title: '🌟 4.5',
+                    title: '🌟 ' + widget.resturants.rate,
                     color: Colors.grey[600],
                     color2: Colors.grey[300],
                   ),
@@ -117,7 +124,7 @@ class ResturantDetailScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
-                '394 Broome St, New York, NY 10013, USA',
+                widget.resturants.address,
                 style: TextStyle(
                   color: Colors.grey[600],
                 ),
@@ -127,7 +134,7 @@ class ResturantDetailScreen extends StatelessWidget {
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
               child: OpenTimeText(
-                isOpen: 'Open Now',
+                isOpen: widget.resturants.isOpen + ' Now',
                 dailyTime: '9:30 am to 11:00 pm',
               ),
             ),
